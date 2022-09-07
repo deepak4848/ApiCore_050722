@@ -1,0 +1,15 @@
+int max=0;
+       
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine("enter natural no. is");
+            int num = Convert.ToInt32(Console.ReadLine());
+           if(num>max)
+            {
+               max=num;
+                
+           
+        }
+       
+        Console.WriteLine("max=" +b);
+        Console.ReadKey();

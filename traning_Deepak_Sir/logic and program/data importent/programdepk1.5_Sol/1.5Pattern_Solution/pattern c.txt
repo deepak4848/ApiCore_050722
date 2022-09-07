@@ -1,0 +1,29 @@
+
+        Console.WriteLine("Enter the number");
+        int num = Convert.ToInt32(Console.ReadLine());
+        for (int i = 0; i < num; i++)
+        {
+            for (int k = num; k >= i; k--)
+            {
+                Console.Write(" ");
+            }
+
+            for (int j = 0; j <= i; j++)
+            {
+                if (j == 0 || j == i)
+                    Console.Write(" * ");
+                else
+                    Console.Write("  ");
+
+            }
+            Console.WriteLine();
+
+        }
+
+
+
+
+
+
+
+    

@@ -1,0 +1,22 @@
+using System;
+    class Program
+    {
+
+
+
+
+    static void Main(string[] args)
+    {
+
+        int[] arr = new int[5] { 1, 2, 3, 4, 5 };
+        //Array arr = Array.CreateInstance(Type.in)
+        int[] newarray = new int[5];
+
+        arr.CopyTo(newarray, 0);
+
+        foreach (int i in newarray)
+            Console.Write(i);
+
+    }
+}
+ 

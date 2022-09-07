@@ -1,0 +1,22 @@
+using System;
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             int num, reverse = 0;
+        Console.WriteLine("Enter a num.:");
+        num = Convert.ToInt32(Console.ReadLine());
+        while(num!=0)
+        {
+            reverse = reverse * 10;
+            reverse = reverse + num % 10;
+            num = num / 10;
+        }
+                     Console.WriteLine("Reverse of Entered number is:\t"+reverse);
+                   
+             Console.ReadLine();
+             Console.ReadKey();
+        }
+
+    }

@@ -1,0 +1,3 @@
+read today
+html helfigher method
+globel or modelbinding 

@@ -1,0 +1,18 @@
+public static void Main()
+    {
+        Console.WriteLine("Enter number");
+        int num = Convert.ToInt32(Console.ReadLine());
+        
+
+        if (num % 2==0)
+        {
+            Console.WriteLine("no is Even" + num);
+        }
+
+
+
+        else
+            Console.WriteLine("odd is" + num);
+        Console.ReadKey();
+    }
+}

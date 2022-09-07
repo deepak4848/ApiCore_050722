@@ -1,0 +1,38 @@
+pattern 
+a
+AB
+CDE...
+using System;
+
+
+
+    class Program
+{ 
+    static void Main()
+{
+    char ch = 'a';
+    { 
+        for (int i = 0; i < 6; i++)
+
+        {
+
+
+                for (int j = i; j <= i; j++)
+
+                {
+                    if (i % 2 == 0)
+
+
+                        Console.Write((char)(ch - 32));
+
+                    else
+
+                        Console.Write(ch);
+
+
+                    ch++;
+                }
+                Console.Write(" ");
+            }
+        }
+    }

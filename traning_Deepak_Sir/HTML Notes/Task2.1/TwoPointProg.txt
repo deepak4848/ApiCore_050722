@@ -1,0 +1,59 @@
+using System;
+
+class operation
+
+{
+    public static void Main(string[] args)
+    {
+        int x1, x2, y1,y2;
+       double D1;
+        
+        Console.WriteLine("Enter a First number:");
+        x1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a second number:");
+        x2= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a Third number:");
+        y1= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a Four number:");
+        y2 = Convert.ToInt32(Console.ReadLine());
+        
+        int p1 = ((x2 -x1)*(x2-x1));
+        int p2 = ((y2-y1)*(y2-y1));
+        
+        D1 = p1+p2;
+        double D  = Math.Sqrt(D1);
+        Console.WriteLine("D={0}",D);
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+     
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

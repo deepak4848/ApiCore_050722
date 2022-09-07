@@ -1,0 +1,11 @@
+<asp:ListItem Text="---select---" value="0" runat="server"></asp:ListItem>
+                     <asp:ListItem Text="india" value="1" runat="server"></asp:ListItem>
+                     <asp:ListItem Text="china" value="2" runat="server"></asp:ListItem>
+                     <asp:ListItem Text="japan" value="3" runat="server"></asp:ListItem>
+                     <asp:ListItem Text="bhutan" value="4" runat="server"></asp:ListItem>
+
+ <asp:ListItem Text="--select--" Value="0"  runat="server"></asp:ListItem>
+                    <asp:ListItem Text="M.Tech" Value="1"  runat="server"></asp:ListItem>
+                    <asp:ListItem Text="B.Tech" Value="2"  runat="server"></asp:ListItem>
+                    <asp:ListItem Text="MCA" Value="3"  runat="server"></asp:ListItem>
+                    <asp:ListItem Text="BCA" Value="4"  runat="server"></asp:ListItem>

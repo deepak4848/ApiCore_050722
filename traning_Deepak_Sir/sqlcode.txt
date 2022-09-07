@@ -1,0 +1,13 @@
+create table students
+(
+
+id int primary key identitiy,
+firstname varchar(50),
+lastname varchar(50),
+rollno int,
+age int,
+city varchar(50),
+address varchar(50),
+contactno bigint
+
+)

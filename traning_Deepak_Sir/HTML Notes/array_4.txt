@@ -1,0 +1,26 @@
+using System;
+    class Program
+    {
+
+
+
+
+    static void Main(string[] args)
+    {
+
+        Array arr = Array.CreateInstance(typeof(Int32), 5);
+        for(int i=arr.GetLowerBound(0); i<= arr.GetUpperBound(0); i++)
+        {
+            arr.SetValue(10-i, i);
+        }
+
+        foreach (int i in arr)
+            Console.WriteLine(i);
+
+
+
+
+
+    }
+}
+ 

@@ -1,0 +1,136 @@
+using System;
+
+class array
+
+{
+    string[] name = new string[5] { "sunul", "manoj", "rakrsh", "deepak", "rajni" };
+
+
+    public void DisplayName()
+    {
+        Console.WriteLine("Enter charactor alphabet");
+        string y = Convert.ToString(Console.ReadLine());
+        for (int i = 0; i < name.Length; i++)
+        {
+            string x = name[i];
+            
+            
+            if (y == x)
+            {
+                Console.WriteLine(x);
+            }
+
+        }
+    }
+    public void DispayLenName()
+    {
+        for (int i = 0; i < name.Length; i++)
+        {
+            string x = name[i];
+            if (x.Length >= 5)
+            {
+                Console.WriteLine(x);
+            }
+
+        }
+
+    }
+    public void DispayEndName()
+    {
+
+        for (int i = 0; i < name.Length; i++)
+        {
+            string x = name[i];
+            Console.WriteLine("Enter charactor alphabet");
+            string y = Convert.ToString(Console.ReadLine());
+            if (y == x)
+            {
+                Console.WriteLine(x);
+            }
+
+        }
+    }
+    public void DisplayUpper()
+    {
+        for (int i = 0; i < name.Length; i++)
+        {
+            string x = name[i];
+
+
+            Console.WriteLine(x.ToUpper());
+
+        }
+    }
+    public void CountVowelsName(string name)
+    {
+
+        int count = 0;
+        for (int i = 0; i < name.Length; i++)
+        {
+
+            if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u')
+                count++;
+
+        }
+        Console.WriteLine("vowels:{0}", count);
+
+    }
+
+
+}
+               
+class myClass
+{
+    public static void Main(string[] args)
+    {
+        array arr = new array();
+        arr.DisplayName();
+            arr.DispayLenName();
+            arr.DispayEndName();
+            arr.DisplayUpper();
+            arr.CountVowelsName("sunil");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

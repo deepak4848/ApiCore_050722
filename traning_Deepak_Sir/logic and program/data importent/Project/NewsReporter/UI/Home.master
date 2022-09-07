@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="UI_Home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../Data/Home/assets/font/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Data/Home/assets/font/font.css" rel="stylesheet" />
+    <link href="../Data/Home/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Data/Home/assets/css/style.css" rel="stylesheet" />
+    <link href="../Data/Home/assets/css/responsive.css" rel="stylesheet" />
+    <link href="../Data/Home/assets/css/jquery.bxslider.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <body>
+        <form id="form1" runat="server">
+<div class="body_wrapper">
+  <div class="center">
+    <div class="header_area">
+      <div class="logo floatleft"><a href="#"><img src="/Data/Home/images/logo.png" alt=""/></a></div>
+      <div class="top_menu floatleft">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Subscribe</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+      <div class="social_plus_search floatright">
+        <div class="social">
+          <ul>
+            <li><a href="#" class="twitter"></a></li>
+            <li><a href="#" class="facebook"></a></li>
+            <li><a href="#" class="feed"></a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <form action="#" method="post" id="search_form">
+            <input type="text" value="Search news" id="s"/>
+            <input type="submit" id="searchform" value="search"/>
+            <input type="hidden" value="post" name="post_type"/>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="main_menu_area">
+      <ul id="nav">
+        <li><a href="#">world news</a>
+          <ul>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a>
+              <ul>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">sports</a></li>
+        <li><a href="#">tech</a>
+          <ul>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">business</a></li>
+        <li><a href="#">Movies</a>
+          <ul>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a>
+              <ul>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+                <li><a href="#">Single item</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">entertainment</a></li>
+        <li><a href="#">culture</a></li>
+        <li><a href="#">Books</a>
+          <ul>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+            <li><a href="#">Single item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">classifieds</a></li>
+        <li><a href="#">blogs</a></li>
+      </ul><select class="selectnav" id="selectnav1"><option value="">-Navigation-</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">world news</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">sports</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">tech</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">business</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">Movies</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">-- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">entertainment</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">culture</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">Books</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">- Single item</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">classifieds</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">blogs</option></select>
+    </div>
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    <div class="footer_top_area">
+      <div class="inner_footer_top"> <img src="/Data/Home/images/add3.png" alt=""/> </div>
+    </div>
+    <div class="footer_bottom_area">
+      <div class="footer_menu">
+        <ul id="f_menu">
+          <li><a href="#">world news</a></li>
+          <li><a href="#">sports</a></li>
+          <li><a href="#">tech</a></li>
+          <li><a href="#">business</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">entertainment</a></li>
+          <li><a href="#">culture</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">classifieds</a></li>
+          <li><a href="#">blogs</a></li>
+        </ul><select class="selectnav" id="selectnav2"><option value="">-Navigation-</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">world news</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">sports</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">tech</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">business</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">Movies</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">entertainment</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">culture</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">Books</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">classifieds</option><option value="file:///E:/Synapse%20Training/template/the-news-reporter/index.html#">blogs</option></select>
+      </div>
+      <div class="copyright_text">
+        <p>Copyright © 2045 The News Reporter Inc. All rights reserved | Design by <a target="_blank" rel="nofollow" href="http://www.graphicsfuel.com/2045/10/wp-magazine-theme-template-psd/">Rafi MD</a></p>
+        <p>Trade marks and images used in the design are the copyright of their respective owners and are used for demo purposes only.</p>
+      </div>
+    </div>
+  </div>
+</div>
+           
+            </form>
+        <script src="../Data/Home/jquery-min.js"></script>
+        <script src="../Data/Home/bootstrap.min.js"></script>
+        <script src="../Data/Home/jquery.bxslider.js"></script>
+        <script src="../Data/Home/selectnav.min.js"></script>
+</body>
+</html>

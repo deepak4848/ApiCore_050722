@@ -1,0 +1,90 @@
+create database practice_10921
+use practice_10921
+create table students
+(
+id int primary key identity,
+firstname varchar(50),
+lastname varchar(50),
+rollno int,
+age int,
+city varchar(50),
+address varchar(50),
+contactno bigint
+)
+select * from students
+
+--------------------------CHEKBOX QUERY---------------------
+create database CBL1910
+use CBL1910
+create table student
+(
+id int primary key identity,
+name varchar(50),
+gender int,
+course int,
+hobbies varchar(50),
+)
+select * from student
+create proc sp_student
+@action varchar(50)=null,
+@id int=0,
+@name varchar(50)=null,
+@gender int=0,
+@course int=0,
+@hobbies varchar(50)=null
+as 
+begin
+if(@action='INSERT')
+begin
+insert into student(name,gender,course,hobbies)
+values(@name,@gender,@course,@hobbies)
+end
+else if(@action='SELECT')
+begin
+select * from student
+end
+else if(@action='DELETE')
+begin
+delete from student where id=@id
+end
+else if(@action='EDIT')
+begin
+select * from student where id=@id
+end
+else if(@action='UPDATE')
+begin
+update student set name=@name,gender=@gender,course=@course,hobbies=@hobbies where id=@id
+end
+end
+---------------------------------
+alter proc sp_student
+@action varchar(50)=null,
+@id int=0,
+@name varchar(50)=null,
+@gender int=0,
+@course int=0,
+@hobbies varchar(50)=null
+as 
+begin
+if(@action='INSERT')
+begin
+insert into student(name,gender,course,hobbies)
+values(@name,@gender,@course,@hobbies)
+end
+else if(@action='SELECT')
+begin
+select * from student
+end
+else if(@action='DELETE')
+begin
+delete from student where id=@id
+end
+else if(@action='EDIT')
+begin
+select * from student where id=@id
+end
+else if(@action='UPDATE')
+begin
+update student set name=@name,gender=@gender,course=@course,hobbies=@hobbies where id=@id
+end
+end

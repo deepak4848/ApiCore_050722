@@ -1,0 +1,40 @@
+using System;
+
+
+class ABall
+{
+    public string color;
+    public float price;
+    public float radiaus;
+    public float weight;
+    public string category;
+}
+  struct BBall
+{
+    public string color;
+    public float price;
+    public float radiaus;
+    public float weight;
+    public string category;
+}
+class myclass
+{
+    public static void Main()
+    {
+        ABall ob = new ABall();
+        ob.color = "Blue";
+        ob.price = 28.8f;
+        ob.radiaus = 2.2f;
+        ob.weight = 3.3f;
+        ob.category = "leather";
+
+        ABall ob1 = ob;
+        Console.WriteLine(ob1.color);
+        ob1.color = "red";
+        Console.WriteLine(ob.color);
+        Console.WriteLine(ob1.color);
+        Console.ReadKey();
+        Console.ReadLine();
+
+    }
+}

@@ -1,0 +1,155 @@
+a/
+b..
+class myclass
+{
+
+    public static string left(string word)
+         {
+             
+             
+             string result=string.Empty;
+
+            for(int i=0;i<3;i++)
+         
+            {
+                result+=word[i];
+            }
+             return result;
+         }
+    public static void Main()
+    {
+      Console.WriteLine(myclass.left("India"));
+      Console.ReadLine();
+    }
+}
+
+
+ */
+c//
+class myclass
+{
+
+    public static string Right(string word)
+         {
+             
+             
+             string result=string.Empty;
+
+            for(int i=2;i<5;i++)
+         
+            {
+                result+=word[i];
+            }
+             return result;
+         }
+    public static void Main()
+    {
+      Console.WriteLine(myclass.Right("India"));
+      Console.ReadLine();
+    }
+}
+I//
+lass myclass
+{
+
+    public static string Concat(string word)
+         {
+             
+             
+            string result=string.Empty;
+
+            string s1 = Convert.ToString(Console.ReadLine());
+
+            string s2 = Convert.ToString(Console.ReadLine());
+
+           result = s1 + s2;
+             return result;
+         }
+    public static void Main()
+    {
+        Console.WriteLine(myclass.Concat("hello "));
+      
+      Console.ReadLine();
+    }
+}
+*/
+D--
+class myclass
+{
+    public void   Lower(string lower)
+    {
+        string output = " ";
+        for (int i = 0; i < lower.Length; i++)
+        {
+            if (lower[i] >= 'a' && lower[i] <= 'z')
+            {
+                output += (char)(lower[i] -'a'+'A' );
+                
+            }
+            
+        }
+        Console.WriteLine(output);
+    
+        
+    }
+    public static void Main()
+    {
+        myclass ob=new myclass();
+        ob.Lower("abc");
+            Console.ReadLine();
+    }
+
+}
+*/
+class myclass
+{
+    public void   Replace(string name)
+    {
+       string output = " ";
+       char[] newname = name.ToCharArray();
+        for (int i = 0; i <newname.Length; i++)
+        {
+
+            if (newname[i] == 'i')
+                newname[i] = 'e';
+            
+            
+            
+            
+        }
+        Console.WriteLine(newname);
+    
+        
+    }
+    public static void Main()
+    {
+        myclass ob=new myclass();
+        ob.Replace("university");
+            Console.ReadLine();
+    }
+
+}
+a/
+class myclass
+{
+    public void  Charindex(string name)
+    {
+       //string output = " ";
+
+
+        for (int i = 2; i < name.Length; i++)
+        {
+            Console.WriteLine(i);
+
+            break;
+        }
+    }
+    public static void Main()
+    {
+        myclass ob=new myclass();
+        ob.Charindex("Hello");
+            Console.ReadLine();
+    }
+
+}
+/

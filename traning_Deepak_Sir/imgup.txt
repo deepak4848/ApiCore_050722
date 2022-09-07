@@ -1,0 +1,260 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MovieReg0510.aspx.cs" Inherits="MovieReg0610.MovieReg0510" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" style="background-color:aqua">
+            <tr>
+                <td>NAME:</td>
+                <td><asp:TextBox ID="txtname" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>GENDER:</td>
+                <td><asp:radiobuttonlist ID="rblgender" runat="server" RepeatColumns="3">
+                    <asp:ListItem Text="male" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="female" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="other" Value="3"></asp:ListItem>
+                    </asp:radiobuttonlist></td>
+            </tr>
+            <tr>
+                <td>Actor Name:</td>
+                <td><asp:dropdownlist ID="ddlactor" runat="server" OnSelectedIndexChanged="ddlactor_SelectedIndexChanged" AutoPostBack="true">
+                    
+                    </asp:dropdownlist></td>
+            </tr>
+            <tr>
+                <td>Movies Name:</td>
+                <td><asp:dropdownlist ID="ddlmovies" runat="server">
+                   
+                    </asp:dropdownlist></td>
+            </tr>
+              <tr>
+                <td>Date</td>
+                <td><asp:TextBox ID="txtdate" runat="server" Textmode="date"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>Image Upload</td>
+                <td><asp:FileUpload ID="fuimag" runat="server"></asp:FileUpload></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td><asp:Button ID="btninsert" runat="server" Text="submit" OnClick="btninsert_Click"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><asp:GridView ID="gvindianmovies" runat="server" AutoGenerateColumns="false" OnRowCommand="gvindianmovies_RowCommand">
+                    <Columns>
+                        <asp:TemplateField HeaderText="id">
+                            <ItemTemplate>
+                                <%#Eval("id") %>
+                            </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Name">
+                            <ItemTemplate>
+                                <%#Eval("name") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Gender">
+                            <ItemTemplate>
+                                <%#Eval("gender").ToString()=="1" ? "male" :Eval("gender").ToString()=="2" ? "female" : "other" %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="actor">
+                            <ItemTemplate>
+                                <%#Eval("aname") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="movies">
+                            <ItemTemplate>
+                                <%#Eval("mname") %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                         <asp:TemplateField HeaderText="date">
+                            <ItemTemplate>
+                                <%#Eval("date") %>
+                            </ItemTemplate>
+                            </asp:TemplateField>
+                         <asp:TemplateField HeaderText="actorimage">
+                            <ItemTemplate>
+                               <asp:Image ID="imgg" runat="server" Width="60px" Height="40px" ImageUrl=' <%#Eval("img","~/PICS/{0}") %>' />
+                            </ItemTemplate>
+                            </asp:TemplateField>
+                        
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                               <asp:Button ID="btndelete" runat="server" Text="delete" CommandName="A" CommandArgument='<%#Eval("id") %>' />
+                                <asp:Button ID="btnedit" runat="server" Text="edit" CommandName="B" CommandArgument='<%#Eval("id") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+
+                    
+                    </asp:GridView></td>
+            </tr>
+        </table>
+
+    
+    </div>
+    </form>
+</body>
+</html>
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.IO;
+
+namespace MovieReg0610
+{
+    public partial class MovieReg0510 : System.Web.UI.Page
+    {
+        SqlConnection con = new SqlConnection("data source=DESKTOP-PIAHUPF\\SQLEXPRESS_VSW;initial catalog=MRF0610;integrated security=true");
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                display();
+                displayactor();            
+                ddlmovies.Items.Insert(0, new ListItem("--Please select movies name--", "0"));
+                ddlmovies.Enabled = false;
+
+            }
+
+        }
+        public void clear()
+        {
+            txtname.Text = "";
+            rblgender.ClearSelection();
+            ddlactor.SelectedValue = "0";
+            ddlmovies.SelectedValue = "0";
+            txtdate.Text = "";
+            btninsert.Text = "submit";
+
+        }
+
+        public void display()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from indianmovies join tblactor on indianmovies.actor=tblactor.aid join tblmovies on indianmovies.movies=tblmovies.mid", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            gvindianmovies.DataSource = dt;
+            gvindianmovies.DataBind();
+
+        }
+                
+        public void displayactor()
+        {
+            
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from tblactor", con);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+            con.Close();
+            ddlactor.DataValueField = "aid";
+            ddlactor.DataTextField = "aname";
+            ddlactor.DataSource = dt;
+            ddlactor.DataBind();
+            ddlactor.Items.Insert(0, new ListItem("--Select-Actor--", "0"));
+
+        }
+        public void displaymovies()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from tblmovies where aid='"+ddlactor.SelectedValue+"'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            ddlmovies.Enabled = true;
+            ddlmovies.DataValueField = "mid";
+            ddlmovies.DataTextField = "mname";
+            ddlmovies.DataSource = dt;
+            ddlmovies.DataBind();
+            ddlmovies.Items.Insert(0, new ListItem("--Select Movies--", "0"));
+        }
+
+
+
+        protected void btninsert_Click(object sender, EventArgs e)
+        {
+            string FN = Path.GetFileName(fuimag.PostedFile.FileName);
+            fuimag.SaveAs(Server.MapPath("PICS" + "\\" + FN));
+
+            if (btninsert.Text == "submit")
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("insert into indianmovies(name,gender,actor,movies,date,img)values('" + txtname.Text + "','" + rblgender.SelectedValue + "','" + ddlactor.SelectedValue + "','" + ddlmovies.SelectedValue + "','" + txtdate.Text + "','" +FN+ "')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                display();
+                clear();
+
+            }
+            else if (btninsert.Text == "update")
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("update indianmovies set name='" + txtname.Text + "',gender='" + rblgender.SelectedValue + "',actor='" + ddlactor.SelectedValue + "',movies='" + ddlmovies.SelectedValue + "',date='" + txtdate.Text + "',img='" +fuimag+ "' where id ='" + ViewState["RR"] + "'", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                display();
+                clear();
+
+            }
+            }
+
+        protected void gvindianmovies_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "A")
+            {
+
+                con.Open();
+            SqlCommand cmd = new SqlCommand("delete from indianmovies where id='" + e.CommandArgument + "'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            display();
+            }
+            else if (e.CommandName == "B")
+            {
+                
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select * from indianmovies where id='" + e.CommandArgument + "'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                txtname.Text = dt.Rows[0]["name"].ToString();
+                txtdate.Text = dt.Rows[0]["date"].ToString();
+                rblgender.SelectedValue = dt.Rows[0]["gender"].ToString();
+                displaymovies();
+                ddlactor.SelectedValue = dt.Rows[0]["actor"].ToString();
+                btninsert.Text = "update";
+                ViewState["RR"] = e.CommandArgument;
+            }
+
+  
+
+        }
+        protected void ddlactor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displaymovies();
+        }
+    }
+    }

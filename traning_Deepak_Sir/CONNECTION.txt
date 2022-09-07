@@ -1,0 +1,19 @@
+namespace PATIENT
+{
+    public partial class PATIENT : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        SqlConnection con=new SqlConnection("server= DESKTOP-PIAHUPF\\SQLEXPRESS_VSW;databaseAIIMS;integrated security=true");
+        protected void btninsert_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into PATIENT(name,city,age,address,contact)values('"+txtname.Text+"','"+txtcity.Text+"','"+txtage.Text+"','"+txtaddress.Text+"','"+txtcontactno.Text+"')"; con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+                
+        }
+    }
+}

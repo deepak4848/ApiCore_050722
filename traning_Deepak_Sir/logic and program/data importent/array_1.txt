@@ -1,0 +1,24 @@
+using System;
+    class Program
+    {
+
+
+
+
+    static void Main(string[] args)
+    {
+
+        int[] marr = new int[5] { 1, 2, 3, 4, 5 };
+        Array.Resize<int>(ref marr, 3);
+        marr[2] = 4;
+
+        object newarray = marr.Clone();
+        int[] arr1 = (int[])newarray;
+        Console.WriteLine(object.ReferenceEquals(newarray, arr1));
+        Console.WriteLine(arr1[1]);
+
+
+
+    }
+}
+ 

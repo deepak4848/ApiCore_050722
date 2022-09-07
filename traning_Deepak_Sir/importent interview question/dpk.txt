@@ -1,0 +1,41 @@
+using System;
+
+
+class Myclass
+{
+    public static void Increment(string a)
+    {
+        a="hello";
+        Console.WriteLine("a:" + a);
+
+    }
+    public static void Main()
+    {
+        string i = "india";
+        Console.WriteLine("i:" + i);
+        Increment(i);
+        Console.WriteLine("i:" + i);
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+
+}
+/*class Myclass
+{
+    public static void Increment(ref string a)
+    {
+        a="hello";
+        Console.WriteLine("a:" + a);
+
+    }
+    public static void Main()
+    {
+        string i = "india";
+        Console.WriteLine("i:" + i);
+        Increment(ref i);
+        Console.WriteLine("i:" + i);
+        Console.ReadKey();
+        Console.ReadLine();
+    }
+
+}*/

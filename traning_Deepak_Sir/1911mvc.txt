@@ -1,0 +1,74 @@
+create database db1911
+use db1911
+create table emp
+(
+empid int primary key identity,
+name varchar(50),
+address varchar(50),
+age int
+) 
+
+create proc sp_emp_get
+as
+begin
+select * from emp
+end
+
+
+create proc sp_emp_insert
+@name varchar(50),
+@address varchar(50),
+@age int
+as
+begin
+insert into emp(name,address,age)
+values(@name,@address,@age)
+end
+
+create proc sp_emp_delete
+@empid int
+as
+begin
+delete from emp where empid=@empid
+end
+
+create proc sp_emp_edit
+@empid int
+as
+begin
+select * from emp where empid=@empid
+end
+
+create proc sp_emp_update
+@empid int,
+@name varchar(50),
+@address varchar(50),
+@age int
+as
+begin
+update emp set name=@name,address=@address,age=@age where empid=@empid
+end
+select * from emp
+
+
+
+create proc sp_country_get
+as
+begin
+select * from tblcountry
+end
+
+create proc sp_state_get
+@cid int
+as
+begin
+select * from tblstate where cid=@cid
+end
+
+
+
+
+-----------------------------------------------------------------------------------
+delete from emp where empid=12
+delete from emp where empid=2
+

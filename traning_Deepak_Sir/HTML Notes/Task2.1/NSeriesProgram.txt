@@ -1,0 +1,54 @@
+using System;
+
+class operation
+
+{
+    public static void Main(string[] args)
+    {
+        int i,n;
+       double sum=0.0;
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Calculat the Harmonic Series and their sum:\n");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("\n");
+        for(i=1;i<= n;i++)
+        {
+            Console.WriteLine("1/{0}+", i);
+            sum += 1 / (float)i;
+        }
+        Console.WriteLine("\n Sum of Series upto{0} terms:{1}\n", n, sum);
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+     
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

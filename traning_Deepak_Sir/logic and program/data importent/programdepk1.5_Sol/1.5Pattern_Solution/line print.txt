@@ -1,0 +1,42 @@
+class myclass
+{
+
+
+
+    public static void Main()
+    {
+        Console.WriteLine("Enter the number of line");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(" choose h for horizontal and v for vertical");
+
+
+        char key = Convert.ToChar(Console.ReadLine());
+        switch (key)
+        {
+            case 'h':
+                Console.WriteLine("use selected horizontal");
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.WriteLine("-------------------");
+
+                }
+                break;
+            case 'v':
+                Console.WriteLine("u selected for vertical line");
+
+                for (int i = 0; i < n; i++)
+                {
+                    Console.WriteLine("|");
+
+                }
+                break;
+            default:
+                Console.WriteLine("u dont have choose right key");
+                break;
+        }
+        Console.ReadLine();
+
+
+    }
+}

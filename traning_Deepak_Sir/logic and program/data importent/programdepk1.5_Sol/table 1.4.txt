@@ -1,0 +1,15 @@
+
+        int j;
+
+        Console.WriteLine("Input the number (Table to be calculated) : ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("\n");
+        for (j = 1; j <= 10; j++)
+        {
+            Console.Write(" "+ n +" X  "+ j+"  ="+ n * j +" " );
+           
+            Console.WriteLine("\n");
+        } 
+        Console.ReadLine();
+    }
+}

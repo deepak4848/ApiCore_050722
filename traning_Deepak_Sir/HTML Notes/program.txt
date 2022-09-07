@@ -1,0 +1,42 @@
+using System;
+
+class DiceGame
+{
+    int total = 0;
+    public int Throw(string player)
+    {
+        Random rm = new Random();
+        Console.WriteLine("player:{0}", player);
+        for(int i=0;i<3;i++)
+        {
+            Console.WriteLine("Press t/T To Throw a Dice");
+            char ch = Convert.ToChar(Console.ReadLine());
+            if(ch=='t'||ch=='T')
+            {
+                int randomnum = rm.Next(1, 7);
+                total+= randomnum;
+                Console.WriteLine("your random number is:{0}", randomnum);
+                Console.WriteLine("your tatol score now:{0}", total);
+            }
+        }
+        return total;
+    }
+}
+class player
+{
+    public static void Main()
+    {
+        DiceGame p1 = new DiceGame();
+        DiceGame p2 = new DiceGame();
+        if (p1.Throw("sonal") > p2.Throw("pankaj"))
+        {
+            Console.WriteLine("sonal");
+        }
+        else
+        {
+            Console.WriteLine("pankaj");
+        }
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+}

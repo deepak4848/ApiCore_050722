@@ -1,0 +1,128 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="StudentsRegistrationPage.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" style="background-color:darkgray">
+            <tr>
+                <td colspan="2">
+                <center><font><b>Student Registration Form DEEPAK COACHING CENTER</b></font></center>
+                    </td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><asp:TextBox ID="txtfirstname" runat="server"></asp:TextBox></td>
+            </tr>
+
+            <tr>
+                <td>Last Name:</td>
+                <td><asp:TextBox ID="txtlastname" runat="server"></asp:TextBox></td>
+            </tr>
+
+            <tr>
+                <td>Roll Number:</td>
+                <td><asp:TextBox ID="txtrollno" runat="server"></asp:TextBox></td>
+            </tr>
+
+            <tr>
+                <td>Age:</td>
+                <td><asp:TextBox ID="txtage" runat="server"></asp:TextBox></td>
+            </tr>
+
+             <tr>
+                <td>sex:</td>
+               <td><input type="radio" name="sex" value="male" size="10" >male
+                   <input type="radio" name="sex" value="male" size="10" >female
+               </td>
+            </tr>
+
+            <tr>
+                <td>City:</td>
+                <td><select name="city">
+                    <option value="-1" selected>select...</option>
+                    <option value="noida">noida</option>
+                    <option value="ghaziabad">ghaziabad</option>
+                    <option value="anandvihar">anandvihar</option>
+                    </select>
+                    </td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+                <td><select name="course">
+                    <option value="-1" selected>select...</option>
+                    <option value="M.Tech">M.Tech</option>
+                    <option value="B.tech">B.Tech</option>
+                    <option value="BCA">BCA</option>
+                    </select>
+                    </td>
+            </tr>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td><select name="course">
+                    <option value="-1" selected>select...</option>
+                    <option value="Ghaziabad">Ghazibad</option>
+                    <option value="GBN">GBN</option>
+                    <option value="Dadri">Dadri</option>
+                    </select>
+                    </td>
+            </tr>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><select name="course">
+                    <option value="-1" selected>select...</option>
+                    <option value="U.P">U.P</option>
+                    <option value="BIHAR">BIHAR</option>
+                    <option value="DELHI">DELHI</option>
+                    </select>
+                    </td>
+            </tr>
+            <tr>
+                <td>File Upload:</td>
+                <td><input type="file" name="upfile" id="upfile" /><br />
+
+                </td>
+            </tr>
+             <tr>
+                <td>Pin Code:</td>
+                <td><asp:TextBox ID="txtpincode" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>Email Id:</td>
+                <td><asp:TextBox ID="txtEmailid" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>DOB:</td>
+                <td>
+                <asp:TextBox ID="txtDOB" runat="server"></asp:TextBox></td>
+                 <td><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Cld.png" ImageAlign="AbsBottom"/></td>
+                 <td><asp:Calendar ID="Calendar1" runat="server"></asp:Calendar Height="38px" Width="40px"></asp:Calendar>
+                    </td>
+            </tr>
+             <tr>
+                <td>Address:</td>
+                <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+            </tr>
+
+
+            <tr>
+                <td>Contact No:</td>
+                <td><asp:TextBox ID="txtcontactno" runat="server"></asp:TextBox></td>
+            </tr>
+             <tr style="background-color:burlywood">
+                <td><input type="reset"></td>
+                <td clospan="2"><asp:button ID="btninsert" runat="server" text="submit" BackColor="Orange"></asp:button></td>
+            </tr
+        </table>
+
+    </div>
+    </form>
+</body>
+</html>

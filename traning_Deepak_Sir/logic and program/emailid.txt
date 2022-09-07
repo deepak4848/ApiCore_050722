@@ -1,0 +1,25 @@
+using System;
+
+
+class Program
+{
+    int count = 0;
+
+    public void digit(string email)
+    {
+
+
+        for (int i = 0; i < string length ; i++)
+        {
+            char c = Convert.ToChar(Console.ReadLine());
+            if (email[i] == 0 || email[i] == 1 || email[i] == 2 || email[i] == 3 email[i] == 4 || email[i] == 5 || email[i] == 6 )
+                count++;        
+        
+            else
+
+        Console.WriteLine("email", email);
+            
+        }
+    }
+}
+class myclass

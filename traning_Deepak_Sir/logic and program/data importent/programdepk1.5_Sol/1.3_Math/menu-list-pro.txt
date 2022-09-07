@@ -1,0 +1,67 @@
+class abc
+{
+    public static void Main()
+    {
+          float total_cost=0,service_tax=0,maintainace_tax=0;
+          float pcost = 150;
+        Console.WriteLine("----------------------------Food---Menu---List----------------------------------- \n\n");
+        Console.WriteLine("  \n\n");
+        Console.WriteLine("                         Welcome you in Food Cloud");
+
+        Console.WriteLine("  \n\n");
+        Console.WriteLine("choose the fast food given blow");
+        Console.WriteLine("\n");
+        
+
+        Console.WriteLine("press    P:Pizza	150RS");
+        Console.WriteLine("Press	B:Burger 50RS");
+	    Console.WriteLine("Press	S:Sandwich 30RS");
+	    Console.WriteLine("Press	V:VegRoll 30Rs");
+
+        char key = Convert.ToChar(Console.ReadLine());
+      
+        switch(key)
+        {
+            case 'P':
+            case 'p':
+                Console.WriteLine("you selected food item:Pizza"); 
+              service_tax  = pcost*14/100;
+                maintainace_tax=pcost*5/100;
+                total_cost=150+service_tax+maintainace_tax;
+                Console.WriteLine("total amount to pay="+total_cost);
+                
+
+                break;
+            case 'B':
+            case 'b':
+                 Console.WriteLine("you selected food item:Burger"); 
+              service_tax  = 50*14/100;
+                maintainace_tax=50*5/100;
+                total_cost=50+service_tax+maintainace_tax;
+                Console.WriteLine("total amount to pay="+total_cost);
+                break;
+            case 's':
+            case 'S':
+                 Console.WriteLine("you selected food item:Pizza"); 
+              service_tax  = 30*14/100;
+                maintainace_tax=30*5/100;
+                total_cost=30+service_tax+maintainace_tax;
+                Console.WriteLine("total amount to pay="+total_cost);
+                break;
+            case 'V':
+            case 'v':
+                 Console.WriteLine("you selected food item:Vegroll"); 
+              service_tax  = 30*14/100;
+                maintainace_tax=30*5/100;
+                total_cost=30+service_tax+maintainace_tax;
+                Console.WriteLine("total amount to pay="+total_cost);
+                
+                break;
+            default:
+                Console.WriteLine("Enter valid key");
+                break;
+        }
+        Console.WriteLine("--------------------------------------------------------------------------------");
+
+    Console.ReadKey();
+    }

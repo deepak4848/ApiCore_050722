@@ -1,0 +1,40 @@
+using System;
+
+class aball
+{
+
+    public string color;
+    public string price;
+    public float radius;
+    public string weight;
+    public string category;
+
+}
+ class myclass
+{
+    public static void Main()
+    {
+        aball ob = new aball();
+        ob.color = "blue";
+        ob.price = 28.5f;
+        ob.radius = 2.2f;
+        ob.weight = 3.3f;
+        ob.category = "lather";
+        aball ob1 = ob;
+
+        Console.WriteLine(ob1.color);
+        ob1.color = "red";
+        Console.WriteLine(ob.color);
+        Console.WriteLine(ob1.color);
+
+
+
+    }
+}
+
+      
+
+    Console.WriteLine("i :" +i);
+       }
+      
+    }

@@ -1,0 +1,98 @@
+
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+ This version of Firefox is no longer supported. Please upgrade to asupported browser. Dismiss
+Click here to enable desktop notifications for Gmail.   Learn more  Hide
+2 of 289
+ 
+Task
+Inbox
+	x
+Narendra Singh narendrasingh.synapse@gmail.com
+	
+Attachments951 PM (15 hours ago)
+	
+to begshahbaz04, kaushalnikita1, nainsijain11, sunil892009, me, svaibhav184, mr.kishlay, prem8954, sonug6261
+Please Find the task attached..
+4 Attachments
+	
+Click here to Reply, Reply to all, or Forward
+0.21 GB (1%) of 15 GB used
+Manage
+Terms - Privacy
+Last account activity 13 hours ago
+Details
+	
+	
+5 more
+	Narendra Singh
+Show details
+
+					       Task 1.3
+
+1.Explain the difference between operator and operands
+
+2.Explain the various operators availble in C#
+
+3.Write a program to identify whether a character eneterd by a user is a vowel or a consonant.
+
+4.Write the program to identify whether the number entered by a user is even or odd 
+
+5.Write a program to swap two numbers taken by user.
+
+6.Write program to check whether the entered year is leap year or not
+
+7.Write a program of tax calculation. Accept money as input from the user and calculate the tax using following pattern.
+
+Money	Percentage	Total Tax
+Less than 10,000	3%	
+10,000 to 100,000	7%	
+More than 100,000	9.5%	
+
+8.Write a program for library management system in which display the user option and based on option shows them available book.
+Option
+c for computer books
+m for mathematical books
+h for history books
+e for English books
+If user input wrong value then shows them message try again and serve the input prompt again using goto label statement.
+
+9.Write a program that finds the biggest of three integers, using nested if statements.
+
+10.Write a program that applies bonus points to given scores in the range [1…9] by the following rules
+-     If the score is between 1 and 3, the program multiplies it by 10.
+-     If the score is between 4 and 6, the program multiplies it by 100.
+-     If the score is between 7 and 9, the program multiplies it by 1000.
+-     If the score is 0 or more than 9, the program prints an error message.
+
+11.Write a C# program to detect key presses.
+If the user pressed number keys( from 0 to 9), the program will display the number that is pressed, otherwise the program will show Not allowed.
+
+12.Accept any number and check whether a number is odd,multiple of 5 and greater than 30 and less than 100.
+
+13.Display the menu to user like below 
+--------------------------------------------Food Menu List----------------------------------------------------
+
+					Welcome you in Food Cloud 
+	Choose the fast food given below		
+		
+	Press	PPizza	150RS
+	Press	BBurger 50RS
+	Press	SSandwich 30RS
+	Press	VVegRoll 30Rs
+
+--------------------------------------------------------------------------------------------------------------
+ As per user's selection of food by providing the given character for food names like P for Pizza , you need to calculate the total prize by the following formula 
+
+	Total cost = Food Cost(as given in list) + Service Tax(14%) + Maintenance Cost (5%) 
+
+After calculating the total food price , display the food item and it's total cost like below 
+
+Your Selected Food Item  Pizza
+Total Amoun to Pay  178.5 RS
+ 
+
+Task 1.3.txt
+Displaying Task 1.3.txt.

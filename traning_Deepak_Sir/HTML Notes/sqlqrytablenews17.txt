@@ -1,0 +1,83 @@
+create database dbnews
+
+create table tblNewsType
+(
+ID int identity(1,1)primary key,
+Title varchar(100) not null unique, 
+DateofAdd datetime not null,
+Active bit not null default('1')
+)
+select * from tblNewsType
+insert into table tblNewsType(Title,
+
+DateofAdd) values('India',12-10-2017)
+
+create table tblNewsCategory
+(
+ID int primary key identity(1,1), 
+Title varchar(200) unique not null, 
+DateofAdd datetime not null,
+Active bit not null default('1')
+)
+select * from tblnewscategory
+
+create table tblEditor
+(
+ID uniqueidentifier primary key,
+DateofAdd datetime not null, 
+Active bit not null
+)
+select * from tblEditor
+
+create table tblReporter
+(
+ID uniqueidentifier primary key, 
+EditorID uniqueidentifier foreign key,
+DateofAdd datetime not null
+)
+
+select * from tblReporter
+
+create table tblPerson
+(
+ID uniqueidentifier primary key, 
+PersonID uniqueidentifier foreign key reference tblPlaces(ID), 
+PersonName varchar(200),
+unique not null
+)
+select * from tblPerson
+
+200122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

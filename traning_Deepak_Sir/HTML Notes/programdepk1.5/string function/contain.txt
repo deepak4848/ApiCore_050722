@@ -1,0 +1,174 @@
+
+        string d = "You hit someone for 50 damage";
+        string a = "damage";
+        string b = "someone";
+        string c = "you";
+
+        if (d.Contains(a) && d.Contains(b))
+        {
+            Console.WriteLine(" " + d);
+            Console.ReadLine();
+        }
+    }
+}
+/indexof
+
+      public static void Main()
+   {
+      
+      string s2 = "animal";
+
+      // Find the index of the soft hyphen.
+      Console.WriteLine(s2.IndexOf("i"));
+      
+      Console.ReadLine();
+   }
+
+
+/endwith
+
+   public static void Main()
+   {
+       string str = null;
+			str = "VB.NET TOP 10 BOOKS hello";
+			if (str.EndsWith("BOOKS") == true)
+			{
+				Console.WriteLine("The String EndsWith 'BOOKS' ");
+			}
+			else
+			{
+				Console.WriteLine("The String does not EndsWith 'BOOKS'");
+			} 
+		
+      
+
+/*startwith
+
+public static void Main()
+   {
+       string str = null;
+			str = "JAVA TOP 10 BOOKS hello";
+			if (str.StartsWith("JAVA") == true)
+			{
+				Console.WriteLine("The String start with 'java' ");
+			}
+			else
+			{
+				Console.WriteLine("The String does not EndsWith 'BOOKS'");
+			} 
+		
+      Console.ReadLine();             
+   }
+
+substring
+/
+ public static void Main()
+    {
+    
+        string str2 = null;
+      string   str = "This is substring test";
+        str2= str.Substring(0, 9);
+        Console.WriteLine(str2);
+      Console.ReadLine();             
+   }
+
+   }
+tochararray///
+
+   public static void Main()
+    {
+
+        string s1 = "hello";
+        char[] name = s1.ToCharArray();
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine(name[i]);
+        }
+      Console.ReadLine();             
+   }
+
+/replace
+public static void Main()
+    {
+       // string str = null;
+        string str2 = null;
+     string   str = "This is substring test";
+        str2= str.Remove(8, 9);
+        Console.WriteLine(str2);
+      Console.ReadLine();             
+   }
+
+/replacefn//
+
+       string s1="hello";
+       s1 = s1.Replace("e", "ll");
+       Console.WriteLine(s1);
+
+
+
+
+      Console.ReadLine();             
+   }
+
+//
+
+        string [] info = {"Name", "Title", "Age", "Location", "Gender"};
+
+        Console.WriteLine("The initial values in the array are:");
+        foreach (string s in info)
+            Console.WriteLine(s);
+
+        Console.WriteLine("The lowercase of these values is:");        
+
+        foreach (string s in info)
+            Console.WriteLine(s.ToLower());
+
+        Console.WriteLine("{0}The uppercase of these values");        
+
+        foreach (string s in info)
+            Console.WriteLine(s.ToUpper());
+    }
+}
+trimstart/trimend/trim/*
+
+class myclass
+{
+    public static void Main()
+    {
+        string name="   xyz   ";
+        string mobile="abc895412408";
+        string city="12bareilly";
+        string s1 = "bareilly12";
+        Console.WriteLine(name);
+        Console.WriteLine(name.TrimStart());
+        Console.WriteLine(mobile.TrimStart('a','b','c'));
+        Console.WriteLine(city.TrimStart('1','2','3'));
+        Console.WriteLine(s1.TrimEnd('1', '2'));
+        Console.ReadLine();
+    }
+}
+   //
+format
+class strformet
+{
+    public static void Main()
+    {
+
+        string s1 = string.Format("today's temprature is {0} deg c", 23.45);
+        Console.WriteLine(s1);
+        string s2 = string.Format(" time is {0:t},now on {1:d}", DateTime.Now, DateTime.Now);
+        Console.WriteLine(s2);
+        Console.Read();
+    }
+}
+ intern
+class myclass
+{
+    public static void Main()
+    {
+        string a = "hello";
+        string b = string.Intern("hy");
+        Console.WriteLine(object.ReferenceEquals(a, b));
+        Console.ReadLine();
+    }
+}

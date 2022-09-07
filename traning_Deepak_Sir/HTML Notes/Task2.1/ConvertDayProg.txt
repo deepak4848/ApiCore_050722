@@ -1,0 +1,54 @@
+using System;
+
+class operation
+
+{
+    public static void Main(string[] args)
+    {
+
+        int days;
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Enter a days");
+       days=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        var totalMonths =((days % 365) / 30);
+        var remainingDays = ((days % 365) % 30);
+        Console.WriteLine("Estimate duration is:{0} months and {1} days", totalMonths, remainingDays);
+        Console.WriteLine("\n");
+       
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+     
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number:");
+        int size = Convert.ToInt32(Console.ReadLine());
+        int[] fact = new int[size];
+         int Total = 0;
+        int Count = 0;
+        for (Count = 0; Count <=size; Count++)
+       {
+            Count=fact[Count];
+            Total = (Count * (Count - 1)) * Count;
+
+        }
+        
+        for (Count = 0; Count <= size; Count++)
+        {
+            Console.WriteLine("\nThe value of the factorial is {0}", Total);
+
+        }
+        return 0;
+    }
+    
+}

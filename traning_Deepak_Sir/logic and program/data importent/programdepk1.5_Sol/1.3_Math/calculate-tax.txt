@@ -1,0 +1,23 @@
+ double tax = 0;
+        Console.WriteLine("Enter a Money: ");
+        double money = Convert.ToDouble(Console.ReadLine());
+        if (money < 10000)
+        {
+            tax = (money * 3) / 100;
+            Console.WriteLine(tax);
+        }
+        if (10000<=money && money <= 100000)
+        {
+            tax = (money * 7) / 100;
+
+            Console.WriteLine(tax);
+        }
+        if (money > 100000)
+        {
+            tax = (money * 19/2) / 100;
+            Console.WriteLine(tax);
+        }
+        Console.ReadKey();
+    }
+   
+}

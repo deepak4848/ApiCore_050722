@@ -1,0 +1,67 @@
+using System;
+
+class FruitProgram
+{
+    public static void Main(string[] args)
+    {
+        Random rm = new Random();
+        
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Press t/T To Throw a Random Fruit");
+                char ch = Convert.ToChar(Console.ReadLine());
+                if (ch == 't' || ch == 'T')
+                {
+                    int randomnum = rm.Next(1, 10);
+                //Console.WriteLine("your random number is:{0}", randomnum);
+                if (randomnum==1||randomnum==2)
+                {
+                    Console.WriteLine("Apple");
+                }
+                 else if(randomnum==3||randomnum==4)
+                {
+                    Console.WriteLine("BANANA");
+                }
+                else if(randomnum==5||randomnum==6)
+                {
+                    Console.WriteLine("Mangos");
+
+                } 
+                else if(randomnum==7||randomnum==8)
+                {
+                    Console.WriteLine("grapes");
+                }
+                else if(randomnum==9||randomnum==10)
+                {
+                    Console.WriteLine("papiya");
+                }
+                else
+                {
+                    Console.WriteLine("Notvalide num");
+                }
+             }
+            Console.ReadLine();
+
+        }
+
+            
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

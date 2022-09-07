@@ -1,0 +1,39 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebAppliontrng.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+       <table border="1">
+           <tr>
+               <td>name :</td>
+               <td><asp:textbox id="txtname" runat="server"></asp:textbox></td>
+           </tr>
+            <tr>
+               <td>city :</td>
+               <td><asp:textbox id="Txtcity" runat="server"></asp:textbox></td>
+           </tr>
+            <tr>
+               <td>age :</td>
+               <td><asp:textbox id="Txtage" runat="server"></asp:textbox></td>
+           </tr>
+            <tr>
+               <td>address :</td>
+               <td><asp:textbox id="Txtaddress" runat="server"></asp:textbox></td>
+           </tr>
+            
+            <tr>
+               <td> :</td>
+               <td><asp:button id="btninsert" runat="server" Text="submit" /></td>
+           </tr>
+       </table>
+    
+    </div>
+    </form>
+</body>
+</html>

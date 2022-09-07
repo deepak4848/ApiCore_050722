@@ -1,0 +1,25 @@
+int num = Convert.ToInt32(Console.ReadLine());
+        if (30 <= num && num <= 100)
+        {
+            if (num % 2 != 0)
+            {
+                Console.WriteLine("no. is odd =", num);
+                if (num % 5 == 0)
+                {
+                    Console.WriteLine("this no. is multiple of 5", num);
+                }
+                else
+                {
+                    Console.WriteLine("this is not multiple od and odd no ", num);
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("this is not multiple od and odd no ", num);
+            }
+        }
+        else
+            Console.WriteLine("no is out of range");
+        
+        

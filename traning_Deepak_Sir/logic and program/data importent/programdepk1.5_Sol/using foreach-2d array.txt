@@ -1,0 +1,42 @@
+
+class myclass
+{
+    int[,] a=new int[3,2];
+    public void Print2DArray()
+    {
+
+
+
+
+
+
+        Console.WriteLine("Enter the number");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                a[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        /* output each array element's value */
+        foreach (int i in a)
+        {
+            foreach (int j in a)
+            {
+
+
+
+
+                Console.Write("\t" + a[i, j]);
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine();
+        }
+
+    }
+    public static void Main()
+    {
+        myclass ob = new myclass();
+        ob.Print2DArray();
+    }
+}

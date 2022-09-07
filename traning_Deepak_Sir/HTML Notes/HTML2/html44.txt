@@ -1,0 +1,28 @@
+ <html>
+ <table>
+	    <th> empolayerid</th>
+		<th>employer dob</th>
+		<th> empolayername</th>
+		<th>employer address</th>
+	
+	  <thead>
+	    <tr>
+		
+		    <th> empolayerid</th>
+		    <th>employer dob</th>
+		    <th> empolayername</th>
+		    <th>employer address</th>
+		
+		</thead>
+		<tbody>
+		<tr>
+		     <td> sumit</td>
+		     <td>employer dob </td>
+		     <td> empolayername</td>
+		     <td>employer address</td>
+		</tr>
+		</tbody>
+     </thead>
+	 </table>
+	 </html>
+<table>

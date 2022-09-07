@@ -1,0 +1,73 @@
+using System;
+
+
+
+
+class ColorDislay
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("-----------------------------------------------------------------------");
+        for (int i = 0; i < 6; i++)
+        {
+            Console.WriteLine("|");
+        }
+        string[] arr = new string[5];
+        arr[0] = "Red :1";
+        arr[1] = "Blue :2";
+        arr[2] = "Green :3";
+        arr[3] = "Orangr :4";
+        arr[4] = "Black :5";
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+
+            string x = arr[i];
+            Console.WriteLine(x);
+            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine();
+
+        }
+
+        Console.ReadLine();
+    }
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+

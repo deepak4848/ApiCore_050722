@@ -1,0 +1,556 @@
+create table employe(eid int,name varchar(20),mobile varchar(10),city varchar(20),department varchar(20) , salary int)
+
+select * from employe
+
+insert into employe values(1,'deepak','9874561234','Delhi','php',15000)
+insert into employe values(22,'ajay','9874564534','Noida','asp',16000)
+insert into employe values(33,'sunil','9874545234','Agra','android',25000)
+insert into employe values(44,'ashish','9874561234','chandigarh','windows',28000)
+insert into employe values(65,'deepkia','9878561234','kolkatta','linux',17000)
+insert into employe values(16,'namrata','9823561234','aligarh','C',13000)
+insert into employe values(23,'sanjay','9878961234','hathras','c++',17000)
+insert into employe values(67,'nishant','9890561234','kochi','unix',20000)
+insert into employe values(78,'shikhar','9809561234','jalhandar','solaris',28000)
+insert into employe values(101,'nitin','9874561234','Mathura','phonegap',18000)
+insert into employe values(98,'harendra',null,'jalhandar','solaris',88000)
+
+select * from employe
+
+select eid , name from employe
+
+select eid , name from employe where eid=65
+
+
+delete employe
+drop table employe
+
+select eid , name ,  salary as 'Old Salary','New salary '= (1.1) * salary from employe
+
+select * from employe where name like 'a%' or name like 'd%' or name like 's%'
+
+
+select * from employe where name like '[ads]%'
+select * from employe where name like '[^ads]%'
+
+
+select * from employe where name like '%[lkt]'
+
+select * from employe where name like '[ads]%[lkt]'
+
+select * from employe where name like '[ads]%k'
+
+select * from employe where mobile is null
+
+select * from employe where mobile is not null
+
+--displaying details in order
+
+
+select * from employe order by eid asc
+
+select * from employe order by eid 
+
+select * from employe order by eid desc
+
+-- retreiving the top details ....
+
+
+select * from employe
+
+select top 3 * from employe
+
+select top 3 eid ,name from employe
+
+select top 3 * from employe order by salary desc
+
+select top 3 * from employe order by salary 
+
+--------retreiving distinct values ----------------
+
+select city from employe
+
+select distinct city from employe
+
+------------------------------String functions --------------------------
+
+--Are used to manipulate varchar or char type columns in the table
+
+select  ASCII('c') as 'ASCII VAlue'
+
+select CHAR(97) as 'Character Value'
+
+
+select CHARINDEX('e','hello')
+
+select CHARINDEX('a',name) from employe
+
+select name  from employe where CHARINDEX('a',name) = 5
+
+
+select LEFT(name,3) from employe
+
+select name  from employe where LEFT(name,3) = 'dee'
+
+select right(name,3) from employe
+
+select name  from employe where right(name,1) = 'a'
+
+----equlvialent like query
+
+select name from employe where name like '%a'
+
+
+---------------
+
+select LEN(name) from employe
+
+select name from employe where LEN(name) >4
+
+select UPPER(name) from employe
+
+select lower(name) from employe
+
+select * from employe
+
+select REPLACE(name,'ee','i') from employe
+
+select name , REVERSE(name) as 'Reverse name ' from employe
+
+select name from employe where name = REVERSE(name)
+
+select stuff('weather',2,2,'i')
+
+select name ,STUFF(name,2,3,'***') from employe
+
+select name , SUBSTRING(name,2,3) from employe
+
+select name , SUBSTRING(name,1,3) from employe -- same as left working
+
+select name , SUBSTRING(name , len(name)-2,3) from employe --same as right working
+
+
+select * from employe
+
+select name + ' lives in '  + city  from employe
+
+
+select eid + 'is : '+ name from employe--- error due to conversions
+
+
+select CONVERT(char(3),eid) + 'is : ' + name from employe
+
+-------Date Functions ----------------------------
+---- functions are used to manipulate the datateime coumns values----------------
+
+-----Date parts -------------
+
+/*
+
+    yy,yyyy - year
+	qq,q - quarter
+	mm,m -- month
+	dy-- day of year
+	day -- dd,d
+	week -- wk
+	weekday -- Dw
+	hour -- hh
+	minute -- mi
+	second -- ss
+	millisecond -- ms
+ */
+ 
+ --date functions
+ 
+select GETDATE()
+
+------to change the format of date we will use convert functions
+
+select CONVERT(varchar(20),getdate(),1)
+select CONVERT(varchar(20),getdate(),2)
+
+select CONVERT(varchar(20),getdate(),3)--indian date
+select CONVERT(varchar(20),getdate(),4)--indian date
+select CONVERT(varchar(20),getdate(),5)--indian date
+
+select CONVERT(varchar(20),getdate(),6)
+select CONVERT(varchar(20),getdate(),7)
+select CONVERT(varchar(20),getdate(),8)
+
+select CONVERT(varchar(20),getdate(),9)--time 
+
+select CONVERT(varchar(20),getdate(),10)
+
+-----------------------------------------------------------------
+
+select DAY(getdate())
+select DATEPART(dd,getdate())
+select DATENAME(dd,getdate())
+
+
+select MONTH(getdate())
+select DATEPART(mm,getdate())
+select DATENAME(mm,getdate())
+
+select YEAR(getdate())
+select DATEPART(yy,getdate())
+select DATENAME(yy,getdate())
+
+select DATEPART(dw,getdate())
+select DATENAME(dw,getdate())
+
+
+select DATEPART(qq,getdate())
+
+
+select DATEPART(dy,getdate())
+
+
+select DATEPART(wk,getdate())
+
+select DATEPART(hh,getdate())
+select DATEPART(mi,getdate())
+select DATEPART(ss,getdate())
+
+
+select DATEADD(dd,5,getdate())
+select DATEADD(mm,5,getdate())
+select DATEADD(yy,5,getdate())
+
+select DATEADD(dd,5,getdate()),DATEADD(mm,5,getdate()),DATEADD(yy,5,getdate())
+
+
+create table emp (id int , name varchar(20) , dob datetime)
+
+
+insert into emp values (1,'abhay','03/21/1992')
+
+select DATEDIFF(YY,dob,GETDATE()) from emp
+
+select DATENAME(dw,dob) from emp
+
+
+-------------------------------------------------------------------
+
+-------------Mathematical Functions ------------------------------
+
+select ABS(23)
+select ABS(-23)
+
+select CEILING(8.3)
+select Floor(8.3)
+
+select ROUND(34.568,2)
+select ROUND(34.568,1)
+select ROUND(34.568,0)
+select ROUND(34.568,-1) ---30.00
+select ROUND(37.568,-1) --- 40.00
+select ROUND(34.568,-2)--0.000
+
+
+select PI()
+select round(PI(),2)
+
+select LOG(100)
+select LOG10(100)
+
+select POWER(4,3)
+
+select RAND()
+select floor(RAND()*10)
+select floor(RAND()*100)
+
+
+select SQRT(64)
+select SQRT(63)
+
+select SIGN(-33)
+select SIGN(34)
+select SIGN(0)
+
+
+--- will return conutries whose temperature is less than 0.
+select countryname from world where SIGN(countrytemperature) = -1 
+
+
+
+
+------------------------Aggregate Functions ---------------------------
+
+---- Max(), Min() , Sum() , Avg() , Count()
+
+
+select * from employe
+
+
+
+select SUM(salary) from employe
+
+select Avg(salary) from employe
+
+select MAx(salary) from employe
+
+select min(salary) from employe
+
+select count(salary) from employe
+
+select COUNT(city) from employe
+
+select COUNT(distinct city) from employe
+
+
+------------------------------------------------------------------------
+----------------------------------Joins---------------------------------
+
+-- why do we need joins ??
+--------
+-----Joins --
+	--- A.Inner Joins
+	----B.Outer Joins
+		--i.Left Outer Join
+		--ii.Right Outer Join
+		-- iii. Full outer
+	---C.Cross Joins
+	---D.Self Joins
+	---E.Equi Joins
+	
+	
+----------------------------------Inner Joins---------------------------------
+
+create table EmpCompany(eid int,ename varchar(20),department varchar(20) , designation varchar(20) , doj datetime)
+
+drop table EmpCompany
+
+insert into EmpCompany values(101,'Amit','IT','Software Engineer','03/24/2001')
+insert into EmpCompany values(99,'Sumit','Sales','Sales Executive','01/18/2002')
+insert into EmpCompany values(109,'Ajay','IT','Software Executive','01/4/2003')
+insert into EmpCompany values(200,'Anant','IT','Project Manager','02/17/2004')
+insert into EmpCompany values(100,'Amir','Sales','Sales Manager','03/29/2002')
+insert into EmpCompany values(65,'Anshul','IT','Platmorm MAnager','04/21/2005')
+insert into EmpCompany values(111,'Deepak','Bussines','Bussiness Develop','04/21/2002')
+		
+
+select * from empcompany
+select * from empdetails
+
+select ename from empcompany
+
+create table empdetails (eid int,mobile varchar(20),city varchar(20),dob datetime)
+
+insert into empdetails values (99,'98745712474','Delhi','01/15/1985')
+insert into empdetails values (101,'98745712474','Noida','01/15/1983')
+insert into empdetails values (109,'98745712474','Kolkatta','01/15/1990')
+insert into empdetails values (200,'98745712474','Chandigarh','01/15/1982')
+insert into empdetails values (100,'98745712474','Lucknow','01/15/1988')
+insert into empdetails values (65,'98745712474','Mumbai','01/15/1985')
+
+
+select * from empcompany
+select * from empdetails
+
+--first way
+select  empdetails.eid , 
+		ename,
+		department,
+		designation,
+		doj,
+		mobile,
+		city,
+		dob 
+from empcompany inner join empdetails on empcompany.eid=empdetails.eid
+
+
+
+
+--second way
+select  ec.eid , 
+		ename,
+		department,
+		designation,
+		doj,
+		mobile,
+		city,
+		dob 
+from empcompany ec join empdetails ed on ec.eid=ed.eid
+
+
+--third way
+
+select  ec.eid , 
+		ename,
+		department,
+		designation,
+		doj,
+		mobile,
+		city,
+		dob 
+from empcompany ec , empdetails ed where ec.eid=ed.eid
+
+create table empextra (eid int , hobby varchar(20) , interest varchar(20) )
+
+insert into empextra values(100,'reading books','cooking')
+insert into empextra values(65,'playing games','playing')
+insert into empextra values(101,'reading comics','outing')
+insert into empextra values(99,'reading news','chatting')
+
+
+select * from empextra
+
+select  ec.eid , 
+		ename,
+		department,
+		designation,
+		doj,
+		mobile,
+		city,
+		dob,
+		hobby,
+		interest 
+from empcompany ec , empdetails ed  , empextra ee where ec.eid=ed.eid and ed.eid = ee.eid
+
+
+-----------------------------Outer Join -------------------------------------
+
+---- Left Outer Join ----------------
+
+create table A(eid int, ename varchar(20) , edepartment varchar(20))
+
+insert into A values(1,'deepak','IT')
+insert into A values(2,'ajay','Sales')
+insert into A values(3,'sanjay','Bussines')
+
+create table B(eid int , ecity varchar(20), emobile varchar(10))
+
+insert into B values(1,'Agra','989747847')
+insert into B values(2,'Delhi','987457474')
+insert into B values(4,'Noida','98745747')
+
+select * from A
+select * from B
+
+select A.eid , ename , edepartment , ecity , emobile from A left outer join B on A.eid = B.eid
+
+select B.eid , ename , edepartment , ecity , emobile from A right outer join B on A.eid = B.eid
+
+select A.eid , ename , edepartment , ecity , emobile from A full outer join B on A.eid = B.eid
+
+----------------------------------Group by -----------------------------------------
+
+select * from employe
+
+select * into empd from employe where eid <= 65
+
+select * from empd
+
+update empd 
+set department='asp' where eid=44 OR eid=16
+
+update empd 
+set department='php' where eid=33 OR eid=65 or eid=23
+
+select department , SUM(salary) as 'Total salary' from empd group by department
+
+select department , SUM(salary) as 'Total salary' from empd group by department having sum(salary)>58000
+
+
+-----------------------------------Subqueries ---------------------------------
+
+select * from employe
+
+select * from A
+select * from B
+
+
+select * from employe where city in ('agra','delhi','noida')
+
+select * from employe where city in ( select ecity from B )
+
+select * from employe where city in ( select ecity from B where emobile='989747847')
+
+select * from employe where city = (select ecity from B where emobile='989747847')
+
+select * from employe where exists ( select ecity from B where emobile='98974784712')
+
+select * from employe where exists ( select ecity from B where emobile='989747847')
+
+
+---------------------------------------Constraints-----------------------------------------
+/*
+
+Implementing Data Integrity:
+A.Entity Integrity --
+B.Domain Integrity --
+C.Referential integrity --
+D.User defined integrity : by set of rules.
+
+can maintain integrity by below ways :
+A.Applying constraints with Enabling and disabling constraints.
+B.Applying rules
+C.User defined data types
+
+
+Constraints :
+
+A.Primary Keys Constraint
+B.Unique Keys ''
+C.Foreign Keys ''
+D.Check Constraint
+E.Default Constraint
+*/
+
+create table employedetails
+(
+	eid int primary key ,
+	ename varchar(20) not null default 'Admin',
+	emobile varchar(10) unique,
+	ecity varchar(20) check ( ecity in ('Agra','Noida','Delhi'))  default 'Agra' ,
+	eage int check ( eage between 20 and 25),
+	egender char(1) check (egender in ('F','M'))
+)
+	  
+	  
+insert into employedetails values(101,'deepak','987414784','Agra',23,'M')
+
+insert into employedetails values(102,'deepak','987414785','Agra',23,'M')
+
+insert into employedetails values(103,'deepak','987414781','Delhi',24,'M')
+
+insert into employedetails values(104,default,'987414782',default,24,'M')
+
+select * from employedetails
+
+insert into employedetails(eid,emobile,eage,egender) values (105,'87471477',24,'F')
+
+
+-------------------------------------------Identity columns---------------------------------
+
+create table employe1 
+(
+	id int identity(100,1) primary key , 
+	ename varchar(20) not null,
+	department varchar(30) not null,
+	doj datetime not null
+)
+
+-- adding columns  by using alter table
+alter table employe1
+add designation varchar(20) not null
+
+
+
+
+drop table employe1
+
+create table employe1 
+(
+	id int identity(100,1) primary key , 
+	ename varchar(20) not null,
+	department varchar(30) not null,
+	designation varchar(20) not null,
+	doj datetime not null
+)
+
+
+insert into employe1 values('Deepak Singh','IT','Software Enginner','09/03/2014')
+insert into employe1 values('Abhay Singh','SALES','Sales Manager','02/08/2014')
+
+select * from employe1

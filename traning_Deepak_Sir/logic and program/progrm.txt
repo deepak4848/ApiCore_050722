@@ -1,0 +1,38 @@
+class Car
+{
+    public const string Company = "mahendra";
+    public readonly string Architect = "abcd";
+    public static readonly string TyreCompany;
+    /*public Car()
+    {
+        TyreCompany = " ";
+    }*/
+     static Car()
+    {
+        Console.WriteLine("Enter the Company name");
+        
+        TyreCompany = Console.ReadLine();
+    }
+
+
+    public void display()
+    {
+        Console.WriteLine(Company);
+        Console.WriteLine(Architect);
+        Console.WriteLine(TyreCompany);
+    }
+}
+class myclass
+{
+    public static void Main()
+    {
+
+        Car car = new Car();
+        //car.display();
+
+        Console.ReadLine();
+        Console.ReadKey();
+
+    }
+}
+

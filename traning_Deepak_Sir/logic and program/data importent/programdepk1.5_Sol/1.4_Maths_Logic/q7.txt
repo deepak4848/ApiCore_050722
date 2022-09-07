@@ -1,0 +1,45 @@
+class myclass
+{
+
+    public void Luckydraw(string name)
+    {
+        if (name[0] == 'a' || name[0] == 's' || name[0] == 'h')
+        {
+            for (int i = 0; i < name.Length; i++)
+            {
+                if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u')
+                {
+                    if (name.Length >= 5 && name.Length <= 10)
+                    {
+                         Console.WriteLine("the person is winner for lucky draw");
+                         break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("the person is not winners for lucky draw");
+                        break;
+                    }
+                }
+                //else
+                  //  Console.WriteLine("the person is not lucky draw");
+
+            }
+            
+        }
+        else
+            Console.WriteLine("the person is not winner for lucky draw");
+
+    }
+
+}
+class call
+{
+    public static void Main()
+    {
+        myclass ob = new myclass();
+        Console.WriteLine("Enter the name\n");
+        ob.Luckydraw(Console.ReadLine());
+        Console.ReadLine();
+    }
+}
+

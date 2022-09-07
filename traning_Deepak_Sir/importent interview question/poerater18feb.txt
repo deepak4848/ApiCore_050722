@@ -1,0 +1,56 @@
+using System;
+
+class Program
+{
+    public static void calculate(string[] arr)
+    {
+        foreach (string s in arr)
+
+        {
+            string[] result = s.Splet('+', '*', '/', '-');
+            char opt = find Op(s);
+            return findrenet(op);
+
+            Console.WriteLine("find result" opresult);
+            
+
+        }
+    }
+    public static double findopt(string s)
+    {
+        char ch = '\0';
+
+        if (s.Contains(" +"))
+            Ch = '+';
+        if (s.Contains("-"))
+            ch = '-';
+        if (s.Contains("*"))
+            ch = '*';
+        if (s.Contains("/"))
+            ch = '/';
+
+    }
+    public double findrenet(char ch, string[] s)
+
+    {
+        int a = double.parse(s[0]);
+        int b = double.parse(s[1]);
+        switch (ch)
+        {
+
+            case '+';
+                return a + b;
+            case '-';
+                return a - b;
+            case '*';
+                return a * b;
+            case a / b;
+                return a / b;
+
+        }
+    public static void Main()
+    {
+
+        string data = { "10 + 3", "20 -7", "27*41", "41/3" }
+}
+}

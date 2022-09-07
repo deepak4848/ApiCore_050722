@@ -1,0 +1,25 @@
+using System;
+    class Program
+    {
+
+
+
+
+    static void Main(string[] args)
+    {
+
+        int[] arr = new int[5] { 1, 2, 3, 4, 5 };
+        Console.WriteLine(arr.GetLength(0));
+
+        Console.WriteLine(arr.GetLowerBound(0));
+        Console.WriteLine(arr.GetUpperBound(0));
+
+        // use GetLowerBound and GetUpperBound with two dimensional array...
+
+
+
+
+
+    }
+}
+ 

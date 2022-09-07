@@ -1,0 +1,79 @@
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    { 
+        int[] arr = new int[10];
+       
+    
+            Console.WriteLine("Enter the Ten number:");
+            for (int i = 0; i <10; i++)
+            {
+                 arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+        int max = arr[0];
+        for (int i = 0; i < 10; i++)
+        {
+            if (arr[i] > max)
+            {
+                max = arr[i];
+            }
+        }
+        int min = arr[9];
+        for (int i= 0; i <10; i++)
+            {
+                if(arr[i]<min)
+                {
+                    min = arr[i];
+                }
+            }
+        int sum = 0;
+        
+        for (int i = 0; i < 10; i++)
+        {
+            sum += arr[i];
+            
+        }
+        float average = sum / 10;
+        
+            Console.WriteLine("your Maximum number:{0}",max);
+            Console.WriteLine("your minimum number:{0}", min);
+            Console.WriteLine("your sum number:{0}", sum);
+             Console.WriteLine("your average number:" + average);
+
+
+        Console.ReadLine();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

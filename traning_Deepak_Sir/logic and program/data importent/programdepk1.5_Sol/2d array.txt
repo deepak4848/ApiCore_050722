@@ -1,0 +1,35 @@
+
+class myclass
+{
+    class MyArray
+    {
+      public   static void Main()
+        {
+            /* an array with 5 rows and 2 columns*/
+            int[,] a = new int[5, 2];
+            int i, j;
+
+
+            for ( i = 0; i < 3; i++)
+            {
+                for ( j = 0; j < 2; j++)
+                {
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            /* output each array element's value */
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 2; j++)
+                {
+                 
+                   
+                    Console.Write("\t"+a[i, j]);
+                }
+                Console.WriteLine("\n");
+                Console.WriteLine();
+            }
+            
+        }
+    }
+}

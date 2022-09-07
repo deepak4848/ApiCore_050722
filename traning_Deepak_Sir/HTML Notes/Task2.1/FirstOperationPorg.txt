@@ -1,0 +1,67 @@
+using System;
+
+class operation
+
+{
+
+    public void Operation()
+    {
+        int a, b, c, x;
+        a = 250;
+        b = 85;
+        c = 25;
+        x = a / b - c;
+        Console.WriteLine("Result=" + x);
+    }
+    public void Operationnum()
+    {
+        int a, b, c, x;
+        a = 300;
+        b = 70;
+        c = 70;
+        x = a / b - c;
+        Console.WriteLine("Result=" + x);
+    }
+}
+class myclass
+{
+    public static void Main(string[] args)
+    {
+        operation op = new operation();
+        op.Operation();
+        op.Operationnum();
+        Console.ReadLine();
+        Console.ReadKey();
+
+
+    }
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

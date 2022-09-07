@@ -1,0 +1,28 @@
+<html>
+<head>
+	<style>
+	.operator
+	{
+	height:1000px;
+	width:800px;
+	margin:0px auto;
+	background-color:grey;
+	}
+	.add
+	{
+	height:500;
+	width:400;
+	margin:0px auto;
+	float:left;
+	background-color:red;
+	}
+	</style>
+</head>
+<body>
+	<div class="operator"></div>
+		<div class="add"></div>
+		<div class="sub"></div>
+		<div class="multiply"></div>
+		<div class="div"></div>
+		</body>
+		</html>

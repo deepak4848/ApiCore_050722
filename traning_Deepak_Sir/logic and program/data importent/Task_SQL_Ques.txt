@@ -1,0 +1,164 @@
+SQLQueries-------------------------------------------------------------------------------------------------------------------------------
+
+Table Name : Employee
+
+Employee_id	First_name	Last_name	Salary		Joining_date		Department
+1 		John 		Abraham 	1000000 	01-JAN-13 12.00.00 AM 	Banking
+2 		Michael 	Clarke 		800000 		01-JAN-13 12.00.00 AM 	Insurance
+3 		Roy 		Thomas 		700000 		01-FEB-13 12.00.00 AM 	Banking
+4 		Tom 		Jose 		600000 		01-FEB-13 12.00.00 AM 	Insurance
+5 		Jerry 		Pinto 		650000 		01-FEB-13 12.00.00 AM 	Insurance
+6 		Philip 		Mathew 		750000 		01-JAN-13 12.00.00 AM 	Services
+7 		TestName1 	123 		650000 		01-JAN-13 12.00.00 AM 	Services
+8 		TestName2 	Lname% 		600000 		01-FEB-13 12.00.00 AM 	Insurance
+
+
+Table Name : Incentives
+
+Employee_ref_id		Incentive_date		Incentive_amount
+1 			01-FEB-13 		5000
+2 			01-FEB-13 		3000
+3 			01-FEB-13 		4000
+1 			01-JAN-13 		4500
+2 			01-JAN-13 		3500
+
+
+1.Get all employee details from the employee table
+2. Get First_Name,Last_Name from employee table
+3. Get First_Name from employee table using alias name “Employee Name”
+4. Get First_Name from employee table in upper case
+5. Get First_Name from employee table in lower case
+6. Get unique DEPARTMENT from employee table
+7. Select first 3 characters of FIRST_NAME from EMPLOYEE
+8. Get position of 'o' in name 'John' from employee table
+9. Get FIRST_NAME from employee table after removing white spaces from right side
+10. Get FIRST_NAME from employee table after removing white spaces from left side
+11. Get length of FIRST_NAME from employee table
+12. Get First_Name from employee table after replacing 'o' with '$'
+13. Get First_Name and Last_Name as single column from employee table separated by a '_'
+14. Get FIRST_NAME ,Joining year,Joining Month and Joining Date from employee table
+15. Get all employee details from the employee table order by First_Name Ascending
+16. Get all employee details from the employee table order by First_Name descending
+17. Get all employee details from the employee table order by First_Name Ascending and Salary descending
+18. Get employee details from employee table whose employee name is “John”
+19. Get employee details from employee table whose employee name are “John” and “Roy”
+20. Get employee details from employee table whose employee name are not “John” and “Roy”
+21. Get employee details from employee table whose first name starts with 'J'
+22. Get employee details from employee table whose first name contains 'o'
+23. Get employee details from employee table whose first name ends with 'n'
+24. Get employee details from employee table whose first name ends with 'n' and name contains 4 letters
+25. Get employee details from employee table whose first name starts with 'J' and name contains 4 letters
+26. Get employee details from employee table whose Salary greater than 600000
+27. Get employee details from employee table whose Salary less than 800000
+28. Get employee details from employee table whose Salary between 500000 and 800000
+29. Get employee details from employee table whose name is 'John' and 'Michael'
+30. Get employee details from employee table whose joining year is “2013”
+31. Get employee details from employee table whose joining month is “January”
+32. Get employee details from employee table who joined before January 1st 2013
+33. Get employee details from employee table who joined after January 31st
+35. Get Joining Date and Time from employee table
+36. Get Joining Date,Time including milliseconds from employee table
+37. Get difference between JOINING_DATE and INCENTIVE_DATE from employee and incentives table
+38. Get database date
+39. Get names of employees from employee table who has '%' in Last_Name. Tip : Escape character for special characters in a query.
+40. Get Last Name from employee table after replacing special character with white space
+41. Get department,total salary with respect to a department from employee table.
+42. Get department,total salary with respect to a department from employee table order by total salary descending
+	Select DEPARTMENT,sum(SALARY) Total_Salary from employee group by DEPARTMENT order by Total_Salary descending
+43. Get department,no of employees in a department,total salary with respect to a department from employee table order by total salary descending
+44. Get department wise average salary from employee table order by salary ascending
+
+45. Get department wise maximum salary from employee table order by salary ascending
+
+46.Get department wise minimum salary from employee table order by salary ascending
+
+47. Select no of employees joined with respect to year and month from employee table
+
+48.Select department,total salary with respect to a department from employee table where total salary greater than 800000 order by Total_Salary descending
+49. Select employee details from employee table if data exists in incentive table ?
+50.How to fetch data that are common in two query results ?
+51. Get Employee ID's of those employees who didn't receive incentives without using sub query ?
+52. Select 20 % of salary from John , 10% of Salary for Roy and for other 15 % of salary from employee table
+53. Select Banking as 'Bank Dept', Insurance as 'Insurance Dept' and Services as 'Services Dept' from employee table
+54. Delete employee data from employee table who got incentives in incentive table
+55. Insert into employee table Last Name with " ' " (Single Quote - Special Character) 
+56.Select Last Name from employee table which contain only numbers
+
+
+57. Write a query to rank employees based on their incentives for a month
+
+58. Update incentive table where employee name is 'John'
+59. Select first_name, incentive amount from employee and incentives table for those employees who have incentives
+
+60. Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000
+
+61. Select first_name, incentive amount from employee and incentives table for all employes even if they didn't get incentives
+
+62. Select first_name, incentive amount from employee and incentives table for all employees even if they didn't get incentives and set incentive amount as 0 for those employees who didn't get incentives.
+
+
+63. Select first_name, incentive amount from employee and incentives table for all employees who got incentives using left join
+	
+64. Select max incentive with respect to employee from employee and incentives table using sub query
+	
+65. Select TOP 2 salary from employee table
+66. Select TOP N salary from employee table
+	
+67. Select 2nd Highest salary from employee table
+	
+68. Select Nth Highest salary from employee table
+	
+69. Select First_Name,LAST_NAME from employee table as separate rows
+	
+70. What is the difference between UNION and UNION ALL ?
+71. Write create table syntax for employee table
+
+-CREATE TABLE EMPLOYEE(
+EMPLOYEE_ID int NOT NULL,
+FIRST_NAME varchar(50) NULL,
+LAST_NAME varchar(50) NULL,
+SALARY decimal(18, 0) NULL,
+JOINING_DATE datetime2(7) default getdate(),
+DEPARTMENT varchar(50) NULL)
+
+72. Write syntax to delete table employee
+	DROP table employee;
+
+73. Write syntax to set EMPLOYEE_ID as primary key in employee table
+74. Write syntax to set 2 fields(EMPLOYEE_ID,FIRST_NAME) as primary key in employee table
+75. Write syntax to drop primary key on employee table
+76. Write Sql Syntax to create EMPLOYEE_REF_ID in INCENTIVES table as foreign key with respect to EMPLOYEE_ID in employee table
+77. Write SQL to drop foreign key on employee table
+78. What is SQL Injection ?
+
+
+-----------------------------------------------------------Other Querrie
+79. SQL Query to find second highest salary of Employee
+80. SQL Query to find Max Salary from each department.
+81.Write an SQL Query to check whether date passed to Query is the date of given format or not.
+82.Write an SQL Query to print the name of the distinct employee whose DOB is between 01/01/1960 to 31/12/1975.
+83.Write an SQL Query find number of employees according to gender  whose DOB is between 01/01/1960 to 31/12/1975.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

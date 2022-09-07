@@ -1,0 +1,86 @@
+using System;
+
+class operation
+
+{
+    public static void Main(string[] args)
+    {
+
+        double price;
+
+        Console.WriteLine("\n");
+        Console.WriteLine("Enter a Price value");
+       price =Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("\n");
+        Console.WriteLine("Price is:" + price);
+        double paisa;
+        paisa = (price * 100);
+        Console.WriteLine("\n");
+        Console.WriteLine("Paisa:="+paisa+"paisa");
+        
+        
+        Console.WriteLine();
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+     
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+using System;
+
+    class myclass
+    {
+        static void Increment(string a)
+        {
+
+        a = "hello";
+        Console.WriteLine("a :" + a);
+        }
+
+    public static void Main()
+
+    { 
+
+
+      string i = "hello";
+
+    Console.WriteLine("i : " +i);
+
+    Increment(i);
+
+    Console.WriteLine("i :" +i);
+       }
+
+    }

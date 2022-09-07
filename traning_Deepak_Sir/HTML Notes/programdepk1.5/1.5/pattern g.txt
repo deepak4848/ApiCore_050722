@@ -1,0 +1,23 @@
+  char ch='a';
+        Console.WriteLine("Enter the number");
+        int num = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i < num; i++)
+        {
+            for (int j = 1; j <=i; j++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write((char)(ch - 32));
+                }
+                else
+                {
+                    Console.Write(ch);
+                }
+                ch++;
+            }
+            Console.WriteLine("\n");
+        }
+
+           
+
+        

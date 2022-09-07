@@ -1,0 +1,64 @@
+using System;
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+        string[] hairs = new string[4] { "balck", "brown", "white", "yellow" };
+          string[] eyes = new string[4] { "black", "brown", "white", "gray" };
+          string[] nose = new string[4] { "cat", "elephant", "cow", "dog" };
+          string[] title = new string[4] { "cat", "elephant", "cow", "dog" };
+          for(int i=0;i<4;i++)
+          {
+              string x = hairs[i];
+              Console.WriteLine(x);
+          }
+          for (int i = 0; i < 4; i++)
+          {
+              string x = eyes[i];
+              Console.WriteLine(x);
+          }
+          for (int i = 0; i < 4; i++)
+          {
+              string x = nose[i];
+              Console.WriteLine(x);
+          }
+          for (int i = 0; i < 4; i++)
+          {
+              string x = title[i];
+              Console.WriteLine(x);
+          }
+        
+         
+        
+
+        Console.ReadLine();
+        Console.ReadKey();
+        
+
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

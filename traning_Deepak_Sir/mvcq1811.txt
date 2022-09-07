@@ -1,0 +1,582 @@
+
+@{
+    ViewBag.Title = "Employeeform";
+}
+
+<h3>ADMIN PORTAL</h3>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" id="txtname" /></td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td><input type="text" id="txtaddress" /></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td><input type="text" id="txtage" /></td>
+    </tr>
+
+    <tr>
+        <td>COUNTRY:</td>
+        <td>
+            <select id="ddlcountry" onchange="BINDSTATE()">
+                <option value="0">--select--</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>STATE:</td>
+        <td>
+            <select id="ddlstate">
+                <option value="0">--select--</option>note
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="button" id="btninsert" value="submit" onclick="VALIDATION()" /></td>
+    </tr>
+</table>
+
+
+<table id="tblemployee" style="background-color:darkorange;color:black">
+    <tr style="background-color:lime">
+        <th>User ID</th>
+        <th> User Name</th>
+        <th> User Address</th>
+        <th> User Age</th>
+        <th> User Country</th>
+        <th> User State</th>
+        <th></th>
+        <td></td>
+    </tr>
+</table>
+
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    function VALIDATION()
+    {
+        var msg = "";
+        msg = checkname();
+        msg += checkage();
+        msg += checkaddress();
+        msg += checkcountry();
+        msg += checkstate();
+
+        if (msg=="")
+        {
+            INSERT();
+        }
+        else
+        {
+            alert(msg);
+        }
+        
+    }
+
+    function checkname()
+    {
+        if ($("#txtname").val() == "")
+        {
+            return 'please enter name!!\n';
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    function checkaddress() {
+        if ($("#txtaddress").val() == "")
+        {
+            return 'Please enter address!!\n';
+        }
+        else {
+            return "";
+        }
+    }
+
+    function checkage()
+    {
+        if ($("#txtage").val() == "")
+
+        {
+            return 'Please enter age!!\n';
+        }
+        else {
+            return "";
+        }
+    }
+
+    function checkcountry()
+    {
+        if ($("#ddlcountry").val() == "0")
+        {
+            return 'Please select country!!\n';
+        }
+        else {
+            return "";
+        }
+    }
+
+    function checkstate() {
+        if ($("#ddlstate").val() == "0")
+        {
+            return 'Please select state!!\n';
+        }
+        else {
+            return "";
+        }
+    }
+
+    $(document).ready(function()
+
+    {
+        BINDCOUNTRY();
+        SHOW();
+    });
+
+    function clear()
+    {
+        $("#txtname").val("");
+        $("#txtaddress").val("");
+        $("#txtage").val("");
+        $("#ddlcountry").val("0");
+        $("#ddlstate").val("0");
+        $("#btninsert").val("submit");
+        IDDD=0;
+    }
+
+    function BINDCOUNTRY() {
+
+
+        $.ajax({
+
+            url: 'Employee/CountryGet',
+            type: 'post',
+            data: {},
+            success: function (pp) {
+                pp = JSON.parse(pp);
+                for (var i = 0; i < pp.length; i++)
+                {
+                    $("#ddlcountry").append($('<option></option>').html(pp[i].cname).val(pp[i].cid));
+                }
+               
+
+            },
+            error: function ()
+            {
+                alert('country not displayed!!');
+            }
+        });
+
+    }
+
+    function BINDSTATE()
+    {
+        $.ajax
+            ({
+            url: 'Employee/StateGet',
+            type: 'post',
+            data: { A: $("#ddlcountry").val() },
+            async:false,
+            success: function (pp) {
+                pp = JSON.parse(pp);
+                $("#ddlstate").empty();
+                $("#ddlstate").append($('<option></option>').html("--select--").val(0));
+
+                for (var i = 0; i < pp.length; i++)
+                {
+                    $("#ddlstate").append($('<option></option>').html(pp[i].sname).val(pp[i].sid));
+                }
+            },
+            error: function ()
+            {
+                alert('state not display!!');
+            }
+        });
+    }
+
+
+    function SHOW()
+    {
+        $.ajax({
+            url: 'Employee/EmpGet',
+            type: 'post',
+           
+            data: {},
+            success: function (pp)
+            {
+                pp = JSON.parse(pp);
+
+                $("#tblemployee").find("tr:gt(0)").remove();
+
+                for (var i = 0; i < pp.length; i++)
+
+                {
+                    $("#tblemployee").append('<tr><td>' + pp[i].empid + '</td><td>' + pp[i].name + '</td><td>' + pp[i].address + '</td><td>' + pp[i].age + '</td><td>' + pp[i].cname + '</td><td>' + pp[i].sname + '</td><td><input type="button" id="btndelete" value="delete" onclick="DELETE(' + pp[i].empid + ')" /></td><td><input type="button" id="btnedit" value="edit" onclick="EDIT(' + pp[i].empid + ')" /></td></tr>');
+                }
+            },
+            error: function () { alert('data not displayed!!'); }
+        });
+    }
+
+    function INSERT() {
+        if ($("#btninsert").val() == "submit")
+        {
+
+            $.ajax({
+
+
+                url: 'Employee/EmpInsert',
+                type: 'post',
+
+                data: { A: $("#txtname").val(), B: $("#txtaddress").val(), C: $("#txtage").val(), D: $("#ddlcountry").val(), E: $("#ddlstate").val() },
+                success: function ()
+                {
+                    alert('data has been saved!!');
+                    SHOW();
+                    clear();
+                },
+                error: function () { alert('data has been not saved!!'); }
+            });
+        }
+        else
+        {
+            $.ajax({
+
+
+                url: 'Employee/EmpUpdate',
+                type: 'post',
+
+                data: {Z:IDDD, A: $("#txtname").val(), B: $("#txtaddress").val(), C: $("#txtage").val(), D: $("#ddlcountry").val(), E: $("#ddlstate").val() },
+                success: function () {
+                    alert('data has been updated!!');
+                    SHOW();
+                    clear();
+                    
+                },
+                error: function () { alert('data has been not updated!!'); }
+            });
+        }
+    }
+
+    
+
+        function DELETE(empid) {
+            if(confirm('are you sure you want to delete'))
+            {
+                $.ajax({
+                    url: 'Employee/EmpDelete',
+                    type: 'post',
+                    data: { A: empid },
+                    success: function () {
+                        alert('data has been delete!!');
+                        SHOW();
+                    },
+                    error: function () { alert('data has been not delete!!'); }
+                });
+            }
+        }
+
+
+        IDDD = 0;
+        function EDIT(empid) {
+            $.ajax({
+
+
+                url: 'Employee/EmpEdit',
+                type: 'post',
+                data: { A: empid },
+                async:false,
+                success: function (pp) {
+
+                    pp = JSON.parse(pp);
+                    $("#txtname").val(pp[0].name);
+                    $("#txtaddress").val(pp[0].address);
+                    $("#txtage").val(pp[0].age);
+                    $("#ddlcountry").val(pp[0].country);
+                    BINDSTATE();
+                    $("#ddlstate").val(pp[0].state);
+                    $("#btninsert").val("update");
+                    IDDD = empid;
+
+
+                },
+                error: function () { alert('data has been not Edit!!'); }
+            });
+
+        }
+       
+ 
+</script>
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using Newtonsoft.Json;
+using MVC061120.Models;
+
+namespace MVC061120.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["abc"].ConnectionString);
+
+        public ActionResult Employeeform()
+        {
+            return View();
+        }
+
+        public void EmpInsert(Employee obj)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_emp_insert", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@name", obj.A);
+            cmd.Parameters.AddWithValue("@address", obj.B);
+            cmd.Parameters.AddWithValue("@age", obj.C);
+            cmd.Parameters.AddWithValue("@country", obj.D);
+            cmd.Parameters.AddWithValue("@state", obj.E);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public void EmpDelete(int A)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_emp_delete", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@empid", A);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+        public JsonResult EmpGet()
+        {
+            string pp = "";
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_emp_get", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            pp = JsonConvert.SerializeObject(dt);
+            return Json(pp,JsonRequestBehavior.AllowGet);
+        }
+
+        public void EmpUpdate(Employee obj)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_emp_update", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@empid",obj.Z);
+            cmd.Parameters.AddWithValue("@name", obj.A);
+            cmd.Parameters.AddWithValue("@address", obj.B);
+            cmd.Parameters.AddWithValue("@age", obj.C);
+            cmd.Parameters.AddWithValue("@country", obj.D);
+            cmd.Parameters.AddWithValue("@state", obj.E);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public JsonResult EmpEdit(int A)
+        {
+            string pp = "";
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_emp_edit", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@empid", A);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            pp = JsonConvert.SerializeObject(dt);
+            return Json(pp, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult CountryGet()
+        {
+            string pp = "";
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_country_get", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            pp = JsonConvert.SerializeObject(dt);
+            return Json(pp, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult StateGet(int A)
+        {
+            string pp = "";
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_state_get", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@cid", A);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            pp = JsonConvert.SerializeObject(dt);
+            return Json(pp, JsonRequestBehavior.AllowGet);
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace MVC061120.Models
+{
+    public class Employee
+    {
+        public int Z { get; set; }
+
+        public String A { get; set; }
+
+        public String B { get; set; }
+
+        public int C { get; set; }
+
+        public int D { get; set; }
+
+        public int E { get; set; }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace MVC061120
+{
+    public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Employee", action = "Employeeform", id = UrlParameter.Optional }
+            );
+        }
+    }
+}
+
+create database db1911
+use db1911
+create table emp
+(
+empid int primary key identity,
+name varchar(50),
+address varchar(50),
+age int
+) 
+
+create proc sp_emp_get
+as
+begin
+select * from emp
+end
+
+
+create proc sp_emp_insert
+@name varchar(50),
+@address varchar(50),
+@age int
+as
+begin
+insert into emp(name,address,age)
+values(@name,@address,@age)
+end
+
+create proc sp_emp_delete
+@empid int
+as
+begin
+delete from emp where empid=@empid
+end
+
+create proc sp_emp_edit
+@empid int
+as
+begin
+select * from emp where empid=@empid
+end
+
+create proc sp_emp_update
+@empid int,
+@name varchar(50),
+@address varchar(50),
+@age int
+as
+begin
+update emp set name=@name,address=@address,age=@age where empid=@empid
+end
+select * from emp
+
+
+
+create proc sp_country_get
+as
+begin
+select * from tblcountry
+end
+
+create proc sp_state_get
+@cid int
+as
+begin
+select * from tblstate where cid=@cid
+end
+
+
+
+
+-----------------------------------------------------------------------------------
+delete from emp where empid=12
+delete from emp where empid=2
+create table tblcountry
+(
+cid int primary key identity,
+cname varchar(50)
+)
+insert into tblcountry(cname)values('India'),('Pakistan')
+
+create table tblstate
+(
+sid int primary key identity,
+cid int,
+sname varchar(50)
+)
+insert into tblstate(cid,sname)values(1,'UP')
+insert into tblstate(cid,sname)values(1,'BIHAR')
+insert into tblstate(cid,sname)values(1,'GOA')
+insert into tblstate(cid,sname)values(1,'MP')
+insert into tblstate(cid,sname)values(2,'MULTAN')
+insert into tblstate(cid,sname)values(2,'OKARA')
+insert into tblstate(cid,sname)values(2,'GUJRAT')
+
+

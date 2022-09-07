@@ -1,0 +1,22 @@
+
+
+        Console.WriteLine("Enter a year: ");
+        int year = Convert.ToInt32(Console.ReadLine());
+
+        if (year % 4 == 0)
+        {
+            if (year % 100 == 0)
+            {
+                // year is divisible by 400, hence the year is a leap year
+                if (year % 400 == 0)
+                    Console.WriteLine(" is a leap year.", year);
+                else
+                    Console.WriteLine("is not a leap year.", year);
+            }
+            else
+                Console.WriteLine(" is a leap year.", year);
+        }
+        else
+            Console.WriteLine(" is not a leap year.", year);
+        Console.ReadKey();
+    }

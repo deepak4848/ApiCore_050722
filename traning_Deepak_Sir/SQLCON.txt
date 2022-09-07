@@ -1,0 +1,1 @@
+ SqlCommand cmd = new SqlCommand("insert into PATIENT(name city age address contact)value('"+txtname.Text+"','"+txtcity.Text+"','"+txtage.Text+"','"+txtaddress.Text+"','"+txtcontactno.Text+"')"; con);

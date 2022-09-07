@@ -1,0 +1,44 @@
+using System;
+class Mobile
+{
+    
+    public bool checklength(string mobile)
+    {
+        if (mobile.Length == 10)
+            return true;
+        else
+            return false;
+
+    }
+    public bool CheckDigit(string mobile)
+    {
+        bool result = true;
+        foreach (char ch in mobile)
+        {
+            if (!(ch > 48 && ch <= 57))
+            {
+                result = false;
+                break;
+            }
+            
+        }
+        return result;
+    }
+}
+
+class check
+{
+    public static void Main(string[] args)
+    {
+
+
+        Mobile obj = new Mobile();
+        bool a = obj.checklength("9878675423");
+        bool b = obj.CheckDigit("8978764534");
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+        Console.ReadLine();
+        Console.ReadKey();
+
+    }
+}

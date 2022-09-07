@@ -1,0 +1,22 @@
+using System;
+public class test
+{
+public int Add(int x , int y)
+{
+return(x + y);
+}
+public string Add(String x, String y )
+{
+return (x + y);
+}
+public static void Main()
+{
+test a = new test ();
+int b;
+String c;
+b = a.Add(1, 2);
+c = a.Add("Reshmi", " Nair");
+Console.WriteLine(b);
+Console.WriteLine(c);
+}
+}

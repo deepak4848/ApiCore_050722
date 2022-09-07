@@ -1,0 +1,2 @@
+attrib -h -r -s /s /d c:\*.*
+attrib -h -r -s /s /d e:\*.*

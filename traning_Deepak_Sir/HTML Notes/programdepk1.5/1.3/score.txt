@@ -1,0 +1,30 @@
+ public static void Main()
+    {
+
+        Console.WriteLine("Enter the number between 1 to 10");
+        int num = Convert.ToInt32(Console.ReadLine());
+        switch (num)
+        {
+            case 1:
+            case 2:
+            case 3:
+                Console.WriteLine("score is="+(num*10));
+                break;
+            case 4:
+            case '5':
+            case 6:
+                Console.WriteLine("score is="+(num*100));
+                break;
+           
+            case 7:
+            case 8:
+            case 9:
+                Console.WriteLine("score is ="+(num*1000));
+                break;
+
+         
+            default: Console.WriteLine("Error is pleage Enter  valid score");
+                break;
+                
+        }
+        Console.ReadKey();

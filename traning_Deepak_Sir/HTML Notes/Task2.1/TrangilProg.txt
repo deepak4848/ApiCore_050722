@@ -1,0 +1,57 @@
+using System;
+
+class operation
+
+{
+    public static void Main(string[] args)
+    {
+        int a, b, c,s;
+       double area;
+        
+        Console.WriteLine("Enter a First number:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a second number:");
+        b= Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a Third number:");
+        c= Convert.ToInt32(Console.ReadLine());
+        s = a + b + c / 2;
+        int p1 = s - a;
+        int p2 = s - b;
+        int p3 = s - c;
+        area = s * p1 * p2 * p3;
+        double trinArea = Math.Sqrt(area);
+        Console.WriteLine("Trangil Area is={0}",trinArea);
+        Console.ReadLine();
+        Console.ReadKey();
+    }
+     
+}
+
+         
+        
+
+        
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
